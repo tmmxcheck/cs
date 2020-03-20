@@ -12,18 +12,19 @@ pipeline {
           sh 'echo starting'
         }
       }
-      stage('Build') {
+      stage('Build Image') {
         steps {
           script {
             dockerImage = docker.build('$DOCKER_IMAGE_NAME:$BUILD_NUMBER')
           }
         }
       }
-      stage("Stage Image") {
+      stage("Push Image") {
         steps{
           script {
             docker.withRegistry('https://$CONTAINER_REGISTRY', 'ecr:us-east-1:aws-ecr' ) {
               dockerImage.push()
+            }
           }
         }
       }
