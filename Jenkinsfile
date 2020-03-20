@@ -35,19 +35,19 @@ pipeline {
                     findingsThreshold: new groovy.json.JsonBuilder([
                         malware: 10,
                         vulnerabilities: [
-                            defcon1: 10,
-                            critical: 10,
-                            high: 10,
+                            defcon1: 0,
+                            critical: 0,
+                            high: 0,
                         ],
                         contents: [
-                            defcon1: 10,
-                            critical: 10,
-                            high: 13,
+                            defcon1: 0,
+                            critical: 0,
+                            high: 3,
                         ],
                         checklists: [
-                            defcon1: 10,
-                            critical: 10,
-                            high: 10,
+                            defcon1: 0,
+                            critical: 0,
+                            high: 0,
                         ],
                     ]).toString(),
                 ])
