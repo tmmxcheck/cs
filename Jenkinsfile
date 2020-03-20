@@ -3,7 +3,7 @@ pipeline {
     CONTAINER_REGISTRY = "799597332240.dkr.ecr.us-east-1.amazonaws.com/cloudsummit"
     CONTAINER_REGISTRY_CREDENTIALS = "aws-ecr"
     AWS_ECR_READ_CREDENTIALS = "aws-ecr2"
-    DOCKER_IMAGE = "cloudsummit"
+    DOCKER_IMAGE_NAME = "cloudsummit"
   }
   agent any
     stages {
