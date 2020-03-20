@@ -19,6 +19,14 @@ pipeline {
           }
         }
       }
+      stage("Stage Image") {
+        steps{
+          script {
+            docker.withRegistry('https://$CONTAINER_REGISTRY', 'ecr:us-east-1:aws-ecr' ) {
+              dockerImage.push()
+          }
+        }
+      }
       stage('SmartCheck') {
         steps {
             withCredentials([
