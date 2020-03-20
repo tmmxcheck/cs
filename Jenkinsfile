@@ -1,6 +1,6 @@
 pipeline {
   environment {
-    CONTAINER_REGISTRY = "799597332240.dkr.ecr.us-east-1.amazonaws.com/cloudsummit"
+    CONTAINER_REGISTRY = "799597332240.dkr.ecr.us-east-1.amazonaws.com"
     CONTAINER_REGISTRY_CREDENTIALS = "aws-ecr"
     AWS_ECR_READ_CREDENTIALS = "aws-ecr2"
     DOCKER_IMAGE_NAME = "cloudsummit"
@@ -38,7 +38,7 @@ pipeline {
                     ])
                 ]){
                 smartcheckScan([
-                    imageName: "799597332240.dkr.ecr.us-east-1.amazonaws.com/cloudsummit:demo3",
+                    imageName: "$CONTAINER_REGISTRY/$DOCKER_IMAGE_NAME:$BUILD_NUMBER",
                     smartcheckHost: "34.201.46.204:30923",
                     insecureSkipTLSVerify: true,
                     smartcheckCredentialsId: "smartcheck-auth",
