@@ -15,6 +15,7 @@ pipeline {
       stage('Build') {
         steps {
           dockerImage = docker.build('$DOCKER_IMAGE_NAME:$BUILD_NUMBER')
+        }
       }
       stage('SmartCheck') {
         steps {
