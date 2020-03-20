@@ -39,7 +39,7 @@ pipeline {
                 ]){
                 smartcheckScan([
                     imageName: "$CONTAINER_REGISTRY/$DOCKER_IMAGE_NAME:$BUILD_NUMBER",
-                    smartcheckHost: "3.86.218.42:30923",
+                    smartcheckHost: "3.82.163.219:30923",
                     insecureSkipTLSVerify: true,
                     smartcheckCredentialsId: "smartcheck-auth",
                     imagePullAuth: new groovy.json.JsonBuilder([
@@ -50,7 +50,7 @@ pipeline {
                             ]
                     ]).toString(),
                     findingsThreshold: new groovy.json.JsonBuilder([
-                        malware: 10,
+                        malware: 0,
                         vulnerabilities: [
                             defcon1: 0,
                             critical: 0,
@@ -59,7 +59,7 @@ pipeline {
                         contents: [
                             defcon1: 0,
                             critical: 0,
-                            high: 3,
+                            high: 0,
                         ],
                         checklists: [
                             defcon1: 0,
@@ -73,4 +73,5 @@ pipeline {
       }
     }
 }
+
 
