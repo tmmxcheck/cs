@@ -39,7 +39,7 @@ pipeline {
                 ]){
                 smartcheckScan([
                     imageName: "$CONTAINER_REGISTRY/$DOCKER_IMAGE_NAME:$BUILD_NUMBER",
-                    smartcheckHost: "rhdocker1.t1.aws.demorocks:30923",
+                    smartcheckHost: "3.93.36.169:30923",
                     insecureSkipTLSVerify: true,
                     smartcheckCredentialsId: "smartcheck-auth",
                     imagePullAuth: new groovy.json.JsonBuilder([
